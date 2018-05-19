@@ -32,12 +32,16 @@ class Category extends StatelessWidget {
   // See https://docs.flutter.io/flutter/material/Theme-class.html
   Widget build(BuildContext context) {
     // TODO: Build the custom widget here, referring to the Specs.
-    final Icon _icon = Icon(_categoryIcon);
-    final Text _txt2 = Text(_categoryName, textAlign: TextAlign.right);
+    final Icon _icon = Icon(_categoryIcon, size: 60.0);
+    final Text _txt2 = Text(
+      _categoryName,
+      textAlign: TextAlign.right,
+      style: TextStyle(fontSize: 24.0),
+    );
 
     final Padding _padding = Padding(
       child: _icon,
-      padding: EdgeInsets.only(bottom: 0.0, top: 0.0, left: 80.0, right: 80.0),
+      padding: EdgeInsets.only(bottom: 0.0, top: 0.0, left: 8.0, right: 8.0),
     );
     final Center _center = Center(
       child: _txt2,
@@ -50,6 +54,11 @@ class Category extends StatelessWidget {
     final InkWell _inkwell = InkWell(
       borderRadius: BorderRadius.circular(50.0),
       child: _row,
+      highlightColor: _categoryColor,
+      splashColor: _categoryColor,
+      onTap: () {
+        print('I was tapped!');
+      },
     );
     final Container _cont = Container(
       height: 100.00,
